@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wheel - Player</title>
+    <link rel="stylesheet" href="player.css">
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.0/dist/browser/signalr.min.js"></script>
+</head>
+<body>
+
+    <div id="join-screen">
+        <h1>The Wheel</h1>
+        <input type="text" id="input-room-code" placeholder="Cod camera" maxlength="4"/>
+        <button id="btn-join">Alatura-te</button>
+    </div>
+
+    <div id="name-screen" class="hidden">
+        <h2>Cum te numesti?</h2>
+        <input type="text" id="input-name" placeholder="Numele tau"/>
+        <button id="btn-confirm-name">Confirma</button>
+    </div>
+
+    <div id="waiting-screen" class="hidden">
+        <p id="waiting-msg">Se asteapta toti jucatorii...</p>
+    </div>
+
+    <div id="game-screen" class="hidden">
+        <div id="mini-sentence"></div>
+
+        <div id="hand-area">
+            <h3>Cartile mele</h3>
+            <div id="hand-cards"></div>
+        </div>
+
+        <div id="action-area">
+            <div id="dice-action" class="hidden">
+                <button id="btn-roll-dice">Arunca zarurile</button>
+            </div>
+
+            <div id="letter-action" class="hidden">
+                <div id="letter-keyboard"></div>
+            </div>
+
+            <div id="spin-action" class="hidden">
+                <button id="btn-spin">Invarte</button>
+            </div>
+
+            <div id="choice-action" class="hidden">
+                <button id="btn-play-card">Joaca cartea</button>
+                <button id="btn-guess-letter">Ghiceste o litera</button>
+                <button id="btn-guess-sentence">Ghiceste propozitia</button>
+            </div>
+
+            <div id="sentence-guess-action" class="hidden">
+                <input type="text" id="input-sentence-guess" placeholder="Scrie propozitia..."/>
+                <button id="btn-submit-sentence">Trimite</button>
+                <button id="btn-cancel-guess">Anuleaza</button>
+            </div>
+
+            <div id="must-play-action" class="hidden">
+                <button id="btn-must-play-card">Joaca cartea</button>
+            </div>
+
+            <div id="picker-action" class="hidden">
+                <p id="picker-label"></p>
+                <div id="picker-options"></div>
+            </div>
+
+            <div id="info-action" class="hidden">
+                <p id="info-message"></p>
+                <button id="btn-info-ok">OK</button>
+            </div>
+
+            <div id="waiting-action">
+                <p>Asteapta tura ta...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/player.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>The Wheel - Display</title>
+    <link rel="stylesheet" href="display.css">
+    <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.0/dist/browser/signalr.min.js"></script>
+    <script src="js/qrcode.min.js"></script>
+</head>
+<body>
+
+    <div id="setup-screen">
+        <h1>The Wheel</h1>
+        <input type="number" id="input-num-players" placeholder="Numar jucatori" min="2" max="6"/>
+        <input type="number" id="input-num-rounds" placeholder="Numar runde" min="1"/>
+        <button id="btn-start-game">Porneste jocul</button>
+    </div>
+
+    <div id="waiting-screen" class="hidden">
+        <div id="qr-code"></div>
+        <p id="room-code-label"></p>
+        <p id="players-count"></p>
+        <ul id="players-list"></ul>
+    </div>
+
+    <div id="dice-screen" class="hidden">
+        <div id="dice-left">
+            <div id="dices">
+                <div id="dice1" class="dice"></div>
+                <div id="dice2" class="dice"></div>
+            </div>
+            <p id="throwing-player"></p>
+            <p id="tie-msg"></p>
+        </div>
+        <div id="dice-right">
+            <h3>Clasament</h3>
+            <table id="dice-table">
+                <thead>
+                    <tr><th>Jucator</th><th>Zaruri</th><th>Suma</th></tr>
+                </thead>
+                <tbody id="dice-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="game-screen" class="hidden">
+        <div id="round-indicator"></div>
+        <div id="sentence-screen"></div>
+        <div id="middle-screen">
+            <div id="left-players-screen"></div>
+            <div id="wheel-screen">
+                <svg id="wheel" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg"></svg>
+                <p id="wheel-spinning-player"></p>
+            </div>
+            <div id="right-players-screen"></div>
+        </div>
+        <div id="message-area"></div>
+    </div>
+
+    <div id="finished-screen" class="hidden">
+        <h1>Joc terminat!</h1>
+        <ol id="final-scores"></ol>
+    </div>
+
+    <script src="js/display.js" type="module"></script>
+</body>
+</html>

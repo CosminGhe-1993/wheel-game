@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Fura puncte",
+    "description": "La urmatorul tau tur, pentru fiecare litera ghicita scazi 1 punct de la jucatorul ales.",
+    "color": "#e74c3c"
+  },
+  {
+    "name": "Dublu",
+    "description": "La urmatorul tau tur, fiecare litera ghicita valoreaza 2 puncte.",
+    "color": "#e67e22"
+  },
+  {
+    "name": "Bloc",
+    "description": "Alegi un participant care este sarit la urmatorul sau tur.",
+    "color": "#f1c40f"
+  },
+  {
+    "name": "Anuleaza",
+    "description": "Anulezi o carte de actiune activa de pe tine sau de pe alt jucator.",
+    "color": "#2ecc71"
+  },
+  {
+    "name": "Dezvaluie",
+    "description": "Vezi toate cartile de actiune active ale celorlalti jucatori.",
+    "color": "#1abc9c"
+  },
+  {
+    "name": "Super anulare",
+    "description": "Alegi un jucator cu efecte active si stergi unul la alegere. Daca nimeni nu are efecte, tura se sare.",
+    "color": "#3498db"
+  },
+  {
+    "name": "Inversare",
+    "description": "Cartile active de pe tine se muta inapoi pe jucatorul care ti le-a pus.",
+    "color": "#9b59b6"
+  },
+  {
+    "name": "Transfer",
+    "description": "Muti o carte activa de pe tine pe un alt jucator ales.",
+    "color": "#c0392b"
+  },
+  {
+    "name": "Protectie",
+    "description": "Anulezi o carte activa de pe tine, tu alegi care. Poate fi jucata ca reactie la Dictator.",
+    "color": "#d35400"
+  },
+  {
+    "name": "Arunca",
+    "description": "Toti jucatorii pierd toate cartile din mana (nefolosite).",
+    "color": "#f39c12"
+  },
+  {
+    "name": "Spioneaza",
+    "description": "Vezi cartile din mana unui jucator ales.",
+    "color": "#27ae60"
+  },
+  {
+    "name": "Dictator",
+    "description": "Fiecare jucator ghiceste doar o litera si toate punctele obtinute merg la tine.",
+    "color": "#16a085"
+  },
+  {
+    "name": "Radar",
+    "description": "Afli ce carte va primi urmatorul jucator cand invarte roata.",
+    "color": "#2980b9"
+  },
+  {
+    "name": "Magnet",
+    "description": "Furi toate cartile din mana unui jucator ales.",
+    "color": "#8e44ad"
+  }
+]

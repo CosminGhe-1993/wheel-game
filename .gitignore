@@ -1,0 +1,11 @@
+# .NET build output
+backend/bin/
+backend/obj/
+backend/Debug/
+
+# Local secrets (Groq API key) - never committed, see appsettings.json
+backend/appsettings.Development.json
+
+# Visual Studio / VS Code local files
+.vs/
+*.user

@@ -1,0 +1,281 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: #111;
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hidden { display: none !important; }
+
+/* ── Setup screen ── */
+#setup-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 16px;
+}
+
+#setup-screen h1 { font-size: 3rem; color: #f4c430; }
+
+#setup-screen input {
+    padding: 10px 18px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    width: 260px;
+}
+
+#setup-screen button {
+    padding: 12px 32px;
+    font-size: 1.2rem;
+    background: #f4c430;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ── Waiting screen ── */
+#waiting-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+#room-code-label { font-size: 2rem; font-weight: bold; color: #f4c430; }
+#players-count { font-size: 1.4rem; }
+#qr-code { background: white; padding: 12px; border-radius: 8px; }
+
+/* ── Dice screen ── */
+#dice-screen {
+    display: flex;
+    height: 100vh;
+}
+
+#dice-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+#dice-right {
+    width: 340px;
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+}
+
+#dice-right h3 { font-size: 1.4rem; color: #f4c430; }
+
+#dices { display: flex; gap: 32px; }
+
+.dice {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 10px;
+    gap: 4px;
+}
+
+.dot {
+    background: #111;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+/* Dice dot positions */
+.dice-1 .dot { grid-column: 2; grid-row: 2; }
+.dice-2 .dot:nth-child(1) { grid-column: 1; grid-row: 1; }
+.dice-2 .dot:nth-child(2) { grid-column: 3; grid-row: 3; }
+.dice-3 .dot:nth-child(1) { grid-column: 1; grid-row: 1; }
+.dice-3 .dot:nth-child(2) { grid-column: 2; grid-row: 2; }
+.dice-3 .dot:nth-child(3) { grid-column: 3; grid-row: 3; }
+.dice-4 .dot:nth-child(1) { grid-column: 1; grid-row: 1; }
+.dice-4 .dot:nth-child(2) { grid-column: 3; grid-row: 1; }
+.dice-4 .dot:nth-child(3) { grid-column: 1; grid-row: 3; }
+.dice-4 .dot:nth-child(4) { grid-column: 3; grid-row: 3; }
+.dice-5 .dot:nth-child(1) { grid-column: 1; grid-row: 1; }
+.dice-5 .dot:nth-child(2) { grid-column: 3; grid-row: 1; }
+.dice-5 .dot:nth-child(3) { grid-column: 2; grid-row: 2; }
+.dice-5 .dot:nth-child(4) { grid-column: 1; grid-row: 3; }
+.dice-5 .dot:nth-child(5) { grid-column: 3; grid-row: 3; }
+.dice-6 .dot:nth-child(1) { grid-column: 1; grid-row: 1; }
+.dice-6 .dot:nth-child(2) { grid-column: 3; grid-row: 1; }
+.dice-6 .dot:nth-child(3) { grid-column: 1; grid-row: 2; }
+.dice-6 .dot:nth-child(4) { grid-column: 3; grid-row: 2; }
+.dice-6 .dot:nth-child(5) { grid-column: 1; grid-row: 3; }
+.dice-6 .dot:nth-child(6) { grid-column: 3; grid-row: 3; }
+
+#throwing-player { font-size: 1.3rem; }
+#tie-msg { font-size: 1.1rem; color: #f4c430; }
+
+#dice-table { width: 100%; border-collapse: collapse; }
+#dice-table th, #dice-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+#dice-table th { color: #f4c430; }
+
+/* ── Game screen ── */
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#round-indicator {
+    text-align: center;
+    padding: 8px;
+    font-size: 1rem;
+    color: #aaa;
+    background: #1a1a1a;
+}
+
+#sentence-screen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 16px;
+    min-height: 90px;
+    background: #1a1a1a;
+}
+
+.word-cell { display: flex; gap: 4px; }
+
+.letter-cell {
+    width: 36px;
+    height: 44px;
+    background: #2a2a2a;
+    border-bottom: 3px solid #f4c430;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #f4c430;
+}
+
+.space-cell { width: 20px; }
+
+#middle-screen {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+
+#left-players-screen, #right-players-screen {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    background: #1a1a1a;
+    overflow-y: auto;
+}
+
+#wheel-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+}
+
+#wheel {
+    width: min(360px, 45vh);
+    height: min(360px, 45vh);
+    transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+    filter: drop-shadow(0 0 12px rgba(244, 196, 48, 0.5));
+}
+
+/* Arrow pointer */
+#wheel-screen::after {
+    content: "▼";
+    position: absolute;
+    top: 0;
+    font-size: 2rem;
+    color: #f4c430;
+    text-shadow: 0 2px 8px #000;
+}
+
+#wheel-spinning-player {
+    font-size: 1.2rem;
+    color: #f4c430;
+    background: transparent;
+    font-weight: bold;
+    text-shadow: 0 1px 6px #000;
+}
+
+.player-card {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.player-card.active-player {
+    background: #f4c430;
+    color: #111;
+}
+
+.player-card p { margin: 2px 0; }
+.player-score { font-size: 1.3rem; font-weight: bold; }
+
+/* ── Finished screen ── */
+#finished-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 24px;
+}
+
+#finished-screen h1 { font-size: 3rem; color: #f4c430; }
+
+#final-scores {
+    list-style: none;
+    padding: 0;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+#final-scores li:first-child { color: #f4c430; font-size: 2rem; font-weight: bold; }
+
+#message-area {
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1rem;
+    background: #1a1a1a;
+    min-height: 44px;
+    color: #f4c430;
+}
