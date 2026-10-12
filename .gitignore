@@ -6,6 +6,9 @@ backend/Debug/
 # Local secrets (Groq API key) - never committed, see appsettings.json
 backend/appsettings.Development.json
 
+# Local secrets for Docker Compose - see docker-compose.yml's ${GROQ_API_KEY} usage.
+.env
+
 # Visual Studio / VS Code local files
 .vs/
 *.user
