@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wheel-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wheel-backend
+  template:
+    metadata:
+      labels:
+        app: wheel-backend
+    spec:
+      containers:
+        - name: backend
+          image: wheel-game-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5012
+          env:
+            - name: MongoDb__ConnectionString
+              value: mongodb://wheel-mongo:27017
+            - name: GroqApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: wheel-secrets
+                  key: groq-api-key
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wheel-backend
+spec:
+  selector:
+    app: wheel-backend
+  ports:
+    - port: 5012
+      targetPort: 5012

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wheel-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wheel-frontend
+  template:
+    metadata:
+      labels:
+        app: wheel-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: wheel-game-frontend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wheel-frontend
+spec:
+  selector:
+    app: wheel-frontend
+  ports:
+    - port: 80
+      targetPort: 80

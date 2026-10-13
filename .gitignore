@@ -12,3 +12,5 @@ backend/appsettings.Development.json
 # Visual Studio / VS Code local files
 .vs/
 *.user
+# Local secret for Kubernetes - see k8s/secret.example.yaml for the placeholder version.
+k8s/secret.yaml
